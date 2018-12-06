@@ -1,0 +1,33 @@
+<div *ngIf="gallery">
+  <div class="grid-12 grid-centered" class="titledesc">
+    <h1>{{gallery.title}}</h1>
+  </div>
+  <h6>{{gallery.dateCreated | polishDate | uppercase }}</h6>
+
+  <div class="lista">
+    <button *ngFor="let item of gallery.tags">{{item}}</button>
+  </div>
+
+
+  <div class="mainphoto grid-centered" *ngIf="gallery.photos.length">
+
+    <img src="{{photo.thumbUrl}}">
+
+  </div>
+
+  <div class="row row-align-middle" *ngIf="gallery.photos.length">
+    <div class="grid-4 grid-centered photos"  *ngFor="let item of gallery.photos">
+      <img class="photo" src="{{item.thumbUrl}}" (click)="changePhoto(item)">
+      <h5>Miasto: {{item.city}}</h5>
+      <h6>{{item.desc}}</h6>
+    </div>
+  </div>
+  <div class="comments">
+    <comments-list [(comments)]="comments" (deleteComment)="delComment($event)"></comments-list>
+  </div>
+
+  <div class="commentsform">
+    <comments-form [galleryId]="galleryId" (addComment)="addComment($event)"></comments-form>
+  </div>
+
+</div>

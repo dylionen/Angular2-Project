@@ -1,0 +1,35 @@
+<div>
+
+
+  <div class="row row-align-middle dates" id="dates">
+    <div class="grid-2 grid-centered" (click)="onClick('2018')">
+      <a>2018</a>
+    </div>
+
+    <div class="grid-2 grid-centered" (click)="onClick('2017')">
+      <a>2017</a>
+    </div>
+
+    <div class="grid-2 grid-centered" (click)="onClick('2016')">
+      <a>2016</a>
+    </div>
+
+    <div class="grid-2 grid-centered" (click)="onClick('2015')">
+      <a>2015</a>
+    </div>
+
+    <div class="grid-2 grid-centered" (click)="onClick('2014')">
+      <a>2014</a>
+    </div>
+
+    <div class="grid-2 grid-centered" (click)="onClick()">
+      <a>ALL</a>
+    </div>
+
+    <div class="grid-2 grid-centered">
+      <input type="text" name="searchValue" [(ngModel)]="value" placeholder="Szukaj" (keyup)="onChange()">
+    </div>
+  </div>
+
+
+</div>

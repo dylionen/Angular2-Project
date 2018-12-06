@@ -1,0 +1,72 @@
+
+
+
+gallery{
+  border-style: groove;
+  text-align:center;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.stopka{
+  text-align:right;
+  margin-top:5px;
+  font-style:italic;
+}
+
+
+.newgallery{
+  margin: 0 auto;
+  text-align:center;
+  margin-top:10px;
+  width:30%;
+}
+
+.pages{
+  margin: 10px;
+}
+
+.buttonpage{
+  margin:5px;
+}
+
+.pages a{
+  display:inline;
+  position: relative;
+}
+
+.actualPage{
+  background:red;
+}
+
+.actualinfo{
+  text-align: right;
+}
+
+.pagin{
+  background-color: red;
+}
+.pagin2{
+  background-color: blue;
+}
+
+.position{
+  float:right;
+  border-radius: 100%;
+  background-color: lawngreen;
+}
+gallery{
+  background-color: #2EDBB0;
+}
+
+
+.fade{
+  opacity: 1;
+}
+
+.modal-content{
+  margin-top: 50%;
+}
+
+.grid-4{
+  min-width: 200px;
+}

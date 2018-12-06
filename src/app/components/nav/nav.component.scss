@@ -1,0 +1,40 @@
+@import "../../../assets/styles/variables";
+
+:host {
+  width: 100%;
+  background: $dark-gray;
+  color: #ffff;
+  line-height: $font-size-h2;
+  border-bottom: 1px solid #000;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &.brand-logo {
+      front-size: $font-size-h2;
+    }
+  }
+
+  ul {
+    float: right;
+
+    li {
+      display: inline-block;
+      padding-left: 10px;
+      &:hover {
+        text-transform: uppercase;
+        font-size: 18px;
+      }
+      a {
+        display: block;
+        padding: 4px 10px;
+
+        &.is-active {
+          color: #2C8AC9;
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div *ngIf="new">
+  <div class="left">
+    <h1 class="title">{{new.title}}</h1>
+    <p>{{new.shortText}}</p>
+    <h6>{{new.createdDate}}</h6>
+
+  </div>
+
+
+  <div class="right">
+
+    <h6>Dodano: {{new.dateCreated | date:'yyyy-MM-dd H:mm'}}</h6>
+    <img src="{{new.photoUrl}}">
+    <a href="/news/{{new.newsId}}">Czytaj więcej &darr;</a>
+    <button class="del" (click)="askmodal(content)"><i class="fa fa-trash-o fa-fw"></i>Delete</button>
+    <button class="edit" (click)="editNew()"><i class="fa fa-pencil fa-fw"></i>Edit</button>
+
+  </div>
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Delete: {{new.title}}</h4>
+
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to delete New: {{new.title}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="c(delete())">Yes</button>
+    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+

@@ -1,0 +1,37 @@
+<div class="span" *ngIf="newslist">
+  <div>
+<sortnews (changesort)="changesort($event)"></sortnews>
+
+
+    <ng-container *ngIf="!addNew">
+      <add-edit-news (saveChanges)="saveNews($event)"></add-edit-news>
+      <button class="del" (click)="new(true)">X</button>
+    </ng-container>
+
+    <ng-container *ngIf="!editNew">
+      <add-edit-news [news]="editNewData" (saveChanges)="saveChanges($event)"></add-edit-news>
+      <button class="del" (click)="edit(true)">X</button>
+    </ng-container>
+
+    <ng-container *ngIf="addNew && editNew" >
+      <div class="grid-centered">
+        <h1>News</h1>
+        <button class="new" (click)="new(false)">+</button>
+      </div>
+      <div>
+        <div class="row row-align-middle" *ngIf="newslist">
+          <newslist class="grid-10 grid-centered border" *ngFor="let news of newslist | sortNews:sort | slice:from:to"
+                    [new]="news" (deleteNews)="deleteNews($event)" (editNews)="editNews($event)"></newslist>
+        </div>
+      </div>
+
+      <div class="grid-10 grid-centered text-center sizing">
+        <button *ngIf="activePage" class="" (click)="slicepage(activePage-1)"><</button>
+        <button  *ngFor="let number of newsPagesArray" (click)="slicepage(number)"
+                 [ngClass]="{'pagin': number==activePage, 'pagin2':number!=activePage}">{{number+1}}</button>
+        <button *ngIf="activePage!=newsPagesArray.length-1" (click)="slicepage(activePage+1)">></button>
+      </div>
+    </ng-container>
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="row row-align-middle">
+  <div class="grid-11 grid-centered"  *ngFor="let item of comments">
+    <div class="comment">
+      <a><h6>{{item.firstName}} {{item.lastName}}</h6><i class="date"> {{item.dateCreated | date:'H:mm dd.MM.yyyy'}} </i>  <a class="mail" href="mailto:{{item.email}}"><i class="fa fa-envelope-o fa-fw"></i></a></a>
+      <br><a>{{item.message}}</a>
+
+
+      <i (click)="delComment(item)" class="fa fa-trash-o fa-fw"></i>
+    </div>
+  </div>
+</div>
+

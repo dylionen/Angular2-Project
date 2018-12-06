@@ -1,0 +1,44 @@
+.border{
+  border: 1px solid black;
+  margin:5px 10px;
+  border-radius: 10px;
+  text-align: left;
+  padding:5px;
+  background-color: aliceblue;
+  min-width: 360px;
+}
+
+div{
+  h1{
+    display:inline;
+    text-align:center;
+  }
+  button.new {
+    float: right;
+    color: black;
+    background-color: lawngreen;
+    border-color: #1FD7A9;
+  }
+  button.del {
+    text-align: center;
+    color: black;
+    background-color: red;
+    border-color: brown;
+  }
+}
+
+
+.fade{
+  opacity: 1;
+}
+
+.modal-content{
+  margin-top: 30%;
+}
+
+.pagin{
+  background-color: red;
+}
+.pagin2{
+  background-color: blue;
+}

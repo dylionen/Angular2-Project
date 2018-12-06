@@ -1,0 +1,29 @@
+div{
+  text-align: center;
+  h6{
+    text-align: right;
+    font-size: 10px;
+    font-style: italic;
+    &:hover{
+      color: red;
+    }
+  }
+  a{
+    margin:10px 0;
+    display:block;
+    text-align:justify;
+    font-family: Calibri;
+  }
+  img{
+    width: 70%;
+    height: 70%;
+    min-height: 30px;
+  }
+}
+
+.commentsformclass{
+  margin: 0 auto;
+  text-align:center;
+  margin-top:10px;
+  width:30%;
+}

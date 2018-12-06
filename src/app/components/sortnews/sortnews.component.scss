@@ -1,0 +1,31 @@
+div {
+  float:right;
+  h6 {
+    display: inline;
+  }
+
+  select{
+    border: 1px solid black;
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 10%;
+    font-size: 14px;
+    color: #714BB9;
+  }
+  option{
+    padding-top: 2px;
+    &:nth-of-type(even){
+      color:black;
+      background-color: #bdbdbd;
+    }
+    &:nth-of-type(odd){
+      color: whitesmoke;
+      background-color:black;
+    }
+  }
+
+
+}
+

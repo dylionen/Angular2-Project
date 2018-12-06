@@ -1,0 +1,87 @@
+
+
+<div class="container">
+<div class="span" *ngIf="galleries.length">
+  <div *ngIf="!showGalleryForm && !showEditForm">
+    <div class="grid-centered">
+      <h1> {{title}}</h1>
+      <a>{{description}}</a>
+    </div>
+
+
+
+    <galleries-search (searchValue)="setSearchValue($event)"></galleries-search>
+    <button class="fa fa-plus-circle position" (click)="showGalleryForm=true"></button>
+    <div *ngIf="!showGalleryForm">
+      <ng-container *ngIf="!searchValue">
+        <div class="row row-align-middle">
+          <gallery class="grid-4 grid-centered"
+                   *ngFor="let item of galleries | slice:from:to| searchGalleries:searchValue" [gallery]="item"
+                   (nginit)="ngOnInit()" (editgallery)="editGalleryData($event)">
+          </gallery>
+        </div>
+        <ng-container class="row row-align-centered">
+          <div class="grid-10 grid-centered text-center sizing">
+            <button *ngIf="activePage" class="" (click)="slicepage(activePage-1)"><</button>
+            <button *ngFor="let number of newsPagesArray" (click)="slicepage(number)"
+                    [ngClass]="{'pagin': number==activePage, 'pagin2':number!=activePage}">{{number+1}}
+            </button>
+            <button *ngIf="activePage!=newsPagesArray.length-1" (click)="slicepage(activePage+1)">></button>
+          </div>
+
+
+          <div class="actualinfo">
+            <a>Strona {{actualnumber+1}}/{{newsPagesArray.length}}</a>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="searchValue">
+        <div class="row row-align-middle">
+          <gallery class="grid-4 grid-centered"
+                   *ngFor="let item of galleries | searchGalleries:searchValue" [gallery]="item"
+                   (nginit)="ngOnInit()" (editgallery)="editGalleryData($event)">
+          </gallery>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+
+
+  <!-- <button class="button button-success" (click)="removeGalleries()">Delete Galleries</button>
+ -->
+
+
+  <div class="row" *ngIf="showEditForm">
+    <div class="grid-8">
+      <add-edit-gallery [gallery]="editGallery" [allTags]="allTags" (saveNewGallery)="saveEditGallery($event)"></add-edit-gallery>
+    </div>
+    <div class="grid-8 text-right">
+
+      <button class="button button-success"
+              (click)="showEditForm=false">Back
+      </button>
+    </div>
+  </div>
+
+
+  <div class="row" *ngIf="showGalleryForm">
+    <div class="grid-8">
+      <add-edit-gallery [galleryLen]="incrementation+1" (saveNewGallery)="saveGallery($event)" [allTags]="allTags"></add-edit-gallery>
+    </div>
+    <div class="grid-8 text-right">
+
+      <button class="button button-success"
+              (click)="showGalleryForm=false">Back
+      </button>
+    </div>
+  </div>
+
+  <div class="stopka">
+    <p>Created by Adam. All rights reserved</p>
+  </div>
+
+</div>
+</div>
+

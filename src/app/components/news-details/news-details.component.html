@@ -1,0 +1,17 @@
+<div *ngIf="news && comments">
+
+  <div class="grid-12 grid-centered">
+    <h6>{{news.dateCreated | date:'H:mm dd.MM.yyyy'}}</h6>
+    <h1>{{news.title}}</h1>
+    <a>{{news.longText}}</a>
+    <img src="{{news.photoUrl}}">
+  </div>
+
+
+  <newscommentview [comments]="comments" (delComment)="delComment($event)"></newscommentview>
+
+  <div class="commentsformclass">
+    <newscommentform [emptyComment]="emptyComment" (createComment)="createComment($event)"></newscommentform>
+  </div>
+
+</div>

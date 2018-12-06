@@ -1,0 +1,19 @@
+.dates{
+  border: 2px solid black;
+  text-align:center;
+
+
+  .grid-2{
+    background-color:darkgrey;
+    border: 1px solid rebeccapurple;
+    min-width: 100px;
+    &:hover{
+      background-color:beige;
+    }
+  }
+  input{
+    width:80%;
+    min-width: 80px;
+  }
+}
+

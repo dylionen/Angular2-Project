@@ -1,0 +1,45 @@
+<form #newsForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="row">
+    <div class="grid-16 input-group">
+      <label>Title</label>
+      <input type="text" class="input-control" name="title" #title="ngModel"
+             [(ngModel)]="news.title" required>
+      <p class="text-danger" [hidden]="title.valid || title.pristine">Title
+        required!</p>
+    </div>
+    <div class="grid-16 input-group">
+      <label>Photo URL</label>
+      <input type="text" class="input-control" name="photoUrl"
+             #photoUrl="ngModel" [(ngModel)]="news.photoUrl" required>
+      <p class="text-danger" [hidden]="photoUrl.valid || photoUrl.pristine">Photourl required!</p>
+    </div>
+    <div class="grid-16 input-group">
+
+
+    </div>
+    <div class="grid-16 input-group">
+      <label>Short Text</label>
+      <textarea class="input-control" name="shortText"
+                #shortText="ngModel" [(ngModel)]="news.shortText" required></textarea>
+      <p class="text-danger" [hidden]="shortText.valid || shortText.pristine">Short Text required!</p>
+    </div>
+
+    <div class="grid-16 input-group">
+      <label>Long Text</label>
+      <textarea class="input-control" name="longText"
+                #longText="ngModel" [(ngModel)]="news.longText" required></textarea>
+      <p class="text-danger" [hidden]="longText.valid || longText.pristine">Long Text required!</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="grid-16">
+      <button class="button button-primary"
+              [disabled]="!newsForm.form.valid">Save news
+      </button>
+    </div>
+  </div>
+</form>
+
+
+

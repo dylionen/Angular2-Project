@@ -1,0 +1,38 @@
+
+.comment{
+  border: 1px solid black;
+  margin:5px 10px;
+  border-radius: 10px;
+  text-align: left;
+  padding:5px;
+}
+.comment h6{
+  display:inline;
+  color: #1592E6;
+}
+
+.comment em{
+  color: #bdbdbd;
+  font-size: 8px;
+}
+
+div {
+  .date {
+    color: red;
+    font-size: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .mail {
+    float: right;
+  }
+  .fa{
+    display: block;
+    float:right;
+  }
+
+
+}
+
+
+
